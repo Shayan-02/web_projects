@@ -26,3 +26,11 @@ themeToggleBtn.onclick = () => {
   themeToggleBtn.classList.toggle("active");
   isDark = !isDark;
 };
+
+
+const toggleTheme = () => {
+  const current = localStorage.getItem('theme') || isDark;
+  const next = current === 'light' ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  document.body.className = next;
+};
